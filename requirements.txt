@@ -1,0 +1,18 @@
+# Core dependencies
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
+pyyaml>=6.0
+
+# Training and optimization
+accelerate>=0.20.0
+tqdm>=4.65.0
+
+# Evaluation and visualization
+numpy>=1.24.0
+matplotlib>=3.7.0
+scikit-learn>=1.2.0
+
+# Utilities
+jupyter>=1.0.0
+ipywidgets>=8.0.0

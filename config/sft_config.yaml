@@ -1,0 +1,27 @@
+# Supervised fine-tuning config
+model:
+  name: "distilgpt2"
+  tokenizer_name: "distilgpt2"
+
+training:
+  batch_size: 8
+  max_steps: 2000
+  lr: 5e-5
+  warmup_steps: 100
+  weight_decay: 0.01
+  gradient_accumulation_steps: 1
+  max_length: 64
+
+data:
+  dataset_name: "imdb"             # example; you can replace later
+  text_field: "text"
+  split: "train[:5000]"            # keep small for laptop
+  val_split: "test[:1000]"
+  prompt_template: "Review: {text}\nSentiment:"
+  target_style: "positive"         # depends on your task
+
+logging:
+  log_every: 50
+  save_dir: "models/policy_sft"
+  save_every: 500
+  use_wandb: false

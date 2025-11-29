@@ -1,0 +1,6 @@
+model_name: "distilgpt2"       
+tokenizer_name: "distilgpt2"
+
+max_length: 64                 
+pad_token: "<|pad|>"
+eos_token: ""        

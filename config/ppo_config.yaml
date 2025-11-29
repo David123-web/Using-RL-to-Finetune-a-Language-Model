@@ -1,0 +1,24 @@
+model:
+  name: "distilgpt2"
+  tokenizer_name: "distilgpt2"
+
+ppo:
+  batch_size: 16             # per update
+  rollout_batch_size: 32     # number of prompts per rollout
+  n_updates: 500
+  epochs_per_update: 4
+  gamma: 0.99
+  lam: 0.95
+  clip_range: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.01
+  kl_coef: 0.1               # if you use KL vs ref model
+  max_length: 64
+
+data:
+  prompt_split: "test[:1024]"     # prompts to generate from
+
+logging:
+  log_every: 10
+  save_dir: "models/policy_ppo"
+  eval_every: 50
