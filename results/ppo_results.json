@@ -1,30 +1,30 @@
 {
   "reward": {
-    "mean": 0.31166055787639924,
-    "std": 0.4430458906598069,
+    "mean": 0.31228736141871194,
+    "std": 0.4434350176729206,
     "min": -0.19790944457054138,
     "max": 0.9998725652694702
   },
   "sentiment": {
-    "mean": 0.32442826183061696,
-    "std": 0.44308958911815216,
+    "mean": 0.3250273597673804,
+    "std": 0.4434473512731966,
     "min": 0.00017389679851476103,
     "max": 0.9998725652694702
   },
   "diversity": {
-    "unique_tokens": 3090,
-    "total_tokens": 10007,
-    "diversity_ratio": 0.30878385130408714
+    "unique_tokens": 3088,
+    "total_tokens": 10000,
+    "diversity_ratio": 0.3088
   },
   "repetition": {
-    "mean_repetition": 0.06183852813852815,
-    "std_repetition": 0.05395769198122456
+    "mean_repetition": 0.06170000000000002,
+    "std_repetition": 0.05411536576418368
   },
   "length": {
-    "mean_length": 20.014,
-    "std_length": 0.5742856432125043,
+    "mean_length": 20.0,
+    "std_length": 0.5585696017507576,
     "min_length": 8,
-    "max_length": 22
+    "max_length": 21
   },
   "examples": [
     {

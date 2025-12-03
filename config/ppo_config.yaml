@@ -12,7 +12,7 @@ ppo:
   clip_range: 0.2
   value_coef: 0.5
   entropy_coef: 0.05         # Increased from 0.01 to encourage exploration
-  kl_coef: 0.1               # if you use KL vs ref model
+  kl_coef: 0.3               # Increased from 0.1 to prevent reward hacking
   max_length: 64
 
 data:
