@@ -123,11 +123,23 @@ def evaluate_model(
     # Load model
     if os.path.exists(model_path):
         print(f"Loading model from {model_path}")
-        policy = PolicyLM(PolicyConfig(
-            model_name=model_path,
-            tokenizer_name=model_path,
-            max_length=max_length,
-        ))
+        # Try to load config first to check model type, if fails default to distilgpt2
+        try:
+            policy = PolicyLM(PolicyConfig(
+                model_name=model_path,
+                tokenizer_name=model_path,
+                max_length=max_length,
+            ))
+        except Exception as e:
+            print(f"Standard loading failed, trying with explicit distilgpt2 config: {e}")
+            # Force distilgpt2 config if auto-detection fails
+            policy = PolicyLM(PolicyConfig(
+                model_name=model_path,
+                tokenizer_name="distilgpt2", # Use base tokenizer
+                max_length=max_length,
+            ))
+            # Manually override the model loading to force distilgpt2
+            policy.model = AutoModelForCausalLM.from_pretrained(model_path, config=AutoConfig.from_pretrained("distilgpt2"))
     else:
         print(f"Loading base model {model_name}")
         policy = PolicyLM(PolicyConfig(

@@ -4,8 +4,8 @@ reward_model:
 
 weights:
   sentiment: 1.0
-  repetition: -0.5
-  length: 0.1
+  repetition: -0.2           # Reduced penalty from -0.5
+  length: 0.2                # Increased bonus from 0.1
 
 length_target:
   min_tokens: 10

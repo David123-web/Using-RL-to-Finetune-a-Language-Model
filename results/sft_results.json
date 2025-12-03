@@ -1,0 +1,91 @@
+{
+  "reward": {
+    "mean": 0.05819294920936227,
+    "std": 0.4294298123696681,
+    "min": -0.3070131540298462,
+    "max": 0.9893888831138611
+  },
+  "sentiment": {
+    "mean": 0.2865931112674589,
+    "std": 0.4258162210517196,
+    "min": 0.00017817103071138263,
+    "max": 0.9998493194580078
+  },
+  "diversity": {
+    "unique_tokens": 4685,
+    "total_tokens": 23284,
+    "diversity_ratio": 0.20121113210788524
+  },
+  "repetition": {
+    "mean_repetition": 0.16600081686109666,
+    "std_repetition": 0.06815505481953207
+  },
+  "length": {
+    "mean_length": 46.568,
+    "std_length": 2.5825135043209353,
+    "min_length": 36,
+    "max_length": 51
+  },
+  "examples": [
+    {
+      "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+      "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. This has been the case with countless successful productions and some even tried to change how the world looks at the best. Even if this movie could change the name of",
+      "reward": 0.45778387784957886,
+      "sentiment": 0.6891564130783081
+    },
+    {
+      "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+      "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, action, and lots of trash. It should have been good but I wonder - it's really boring! It's so stupid to me, and even worse that",
+      "reward": -0.20942452549934387,
+      "sentiment": 0.0036189542151987553
+    },
+    {
+      "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+      "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and it would almost surely be the funniest movie I have ever seen.<br /><br />I found this one very interesting to see.<br /><br",
+      "reward": 0.7797626852989197,
+      "sentiment": 0.9988102912902832
+    },
+    {
+      "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+      "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Formerly unemployed, Mr M is a TV presenter who has spent most of his life living off of a bad job when he's finally able to get to work.<",
+      "reward": -0.21914558112621307,
+      "sentiment": 0.010021084919571877
+    },
+    {
+      "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+      "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like it for the reason it is so poorly made! It is a shame that there are so many more sequels now! I think these movies only had 3, and",
+      "reward": -0.22016257047653198,
+      "sentiment": 0.00024559861049056053
+    },
+    {
+      "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+      "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest of all the bad guys.' The only thing he had in common with my early films was the fact that when he started his films, the trailer would appear to",
+      "reward": -0.22722508013248444,
+      "sentiment": 0.0007749208598397672
+    },
+    {
+      "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+      "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, but the more recent films have seen a very good amount of action. The story isn't great; it just isn't entertaining yet; even the action itself is",
+      "reward": 0.77140873670578,
+      "sentiment": 0.9926853179931641
+    },
+    {
+      "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+      "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie with my \"movie fan\" that this movie wasn't directed by a man. (For an aspiring director working at a theater, or a family, and not",
+      "reward": -0.21964922547340393,
+      "sentiment": 0.0025730072520673275
+    },
+    {
+      "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+      "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting time and thinking it was a funny film: the fact that I haven't seen it in my life is unbelievable and this one takes me by surprise. At some",
+      "reward": -0.2316609025001526,
+      "sentiment": 0.0009921550517901778
+    },
+    {
+      "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+      "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's only one reason for even doing the show: because the directors are so good: because it's not a good idea to let the poor film a bit of the",
+      "reward": -0.23245903849601746,
+      "sentiment": 0.00019403085752855986
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "reward": {
+    "mean": 0.23244439928373323,
+    "std": 0.47925727490583653,
+    "min": -0.27973443269729614,
+    "max": 0.9956595301628113
+  },
+  "sentiment": {
+    "mean": 0.4405959487418877,
+    "std": 0.46756340310423966,
+    "min": 0.00017706799553707242,
+    "max": 0.9998767375946045
+  },
+  "diversity": {
+    "unique_tokens": 4825,
+    "total_tokens": 22479,
+    "diversity_ratio": 0.21464477957204503
+  },
+  "repetition": {
+    "mean_repetition": 0.1667577583078952,
+    "std_repetition": 0.07885031815929458
+  },
+  "length": {
+    "mean_length": 44.958,
+    "std_length": 5.431780187010516,
+    "min_length": 20,
+    "max_length": 52
+  },
+  "examples": [
+    {
+      "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+      "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. There are a million movies, mostly made in short stories and written, written, by scientists and people who are often not as good of a writer as the main",
+      "reward": 0.37784844636917114,
+      "sentiment": 0.6145831346511841
+    },
+    {
+      "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+      "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, and the main elements go to the car chases. If you enjoy action movies or you enjoy motion pictures (such as \"The Star Wars\" vs \"The",
+      "reward": 0.7606239318847656,
+      "sentiment": 0.9997543692588806
+    },
+    {
+      "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+      "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and you're probably pretty much ready for the next entry.\n\nThis is the second iteration of Blade Runner where the character is forced to choose between the two action",
+      "reward": 0.3645995855331421,
+      "sentiment": 0.5979329347610474
+    },
+    {
+      "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+      "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former UFC middleweight champion Fabricio Werdum won his first UFC title win since 2005, tying him with Roy Nelson and Chris Weidman both, bringing him",
+      "reward": 0.7720410227775574,
+      "sentiment": 0.9993137121200562
+    },
+    {
+      "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+      "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like the movie.\nI have played my part in all this, so let that give an indication how I feel about the movie. I have a huge (great",
+      "reward": 0.765330970287323,
+      "sentiment": 0.9993734955787659
+    },
+    {
+      "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+      "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest enemy in this world' and then again.\n\n\n\nThe next day, I attended a few dozen community meetings throughout the United States and decided to stay",
+      "reward": 0.10698412358760834,
+      "sentiment": 0.3336507976055145
+    },
+    {
+      "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+      "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, Ronda Rousey, the role of Alicia Keys and Dwayne Johnson, has earned rave reviews for her performances and has also been included as the leading female lead",
+      "reward": 0.7743088603019714,
+      "sentiment": 0.9998407363891602
+    },
+    {
+      "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+      "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie with the screenwriters and movie-makers; it's just that they didn't want the characters involved. So I feel guilty for the people they are.\n",
+      "reward": -0.21067827939987183,
+      "sentiment": 0.0032752202823758125
+    },
+    {
+      "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+      "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting a single single line.\nThe thing about this movie is you have a little of that feeling that your first love has to end in a few moments.\n",
+      "reward": -0.2414088100194931,
+      "sentiment": 0.0002578605490271002
+    },
+    {
+      "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+      "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's no way I can see how this one will end up. I really would love to see more realistic lighting for the show than I did my previous job. It",
+      "reward": -0.22374600172042847,
+      "sentiment": 0.00025399529840797186
+    }
+  ]
+}

@@ -60,7 +60,7 @@ class PPOTrainer:
         # Optimizer for both policy and value head
         self.optimizer = torch.optim.AdamW(
             list(self.policy.model.parameters()) + list(self.value_head.parameters()),
-            lr=1e-5
+            lr=1e-6  # Reduced from 1e-5 to prevent gradient explosion
         )
         
         self.stats = {

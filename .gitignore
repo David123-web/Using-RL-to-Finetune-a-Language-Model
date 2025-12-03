@@ -50,8 +50,8 @@ data/processed/
 *.ckpt
 
 # Results and logs
-results/
-plots/
+# results/
+# plots/
 logs/
 wandb/
 *.log
