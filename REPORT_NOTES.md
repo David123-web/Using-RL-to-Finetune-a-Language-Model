@@ -30,6 +30,15 @@
 - **High KL (0.3)**: Slow convergence (>500 steps). The model struggled to find a policy that satisfies both the Reward Model (be positive) and the KL Constraint (be natural/close to original).
 - **Implication**: Stricter constraints require longer training times as the solution space becomes more complex to navigate.
 
+### D. Discrepancy between Evaluation and Training Dynamics
+- **Observation**: 
+    - In the High KL experiment, the **Training Reward** (green curve) continued to trend upwards (with variance) until the end.
+    - However, the **Evaluation Reward** (on fixed 5 prompts) plateaued early at ~0.6491 and consistently produced the "better and" suffix.
+- **Analysis**:
+    - **Sampling Difference**: Training uses stochastic sampling on diverse batches (exploration), while evaluation often uses greedy/low-temp decoding on fixed prompts (exploitation).
+    - **Persistent Local Optimum**: Even though the model was improving globally (on the training set), for those specific evaluation prompts, the "better and" strategy remained the most confident (highest probability) output, showing how stubborn reward hacking behaviors can be.
+- **Takeaway**: Evaluation on a small, fixed set of prompts can mask the true learning progress and dynamics of the model.
+
 ## 3. Future Work / Limitations
 - **Reward Model Robustness**: The "better and" hack suggests the Reward Model (DistilBERT) is susceptible to simple keyword spotting. A more robust RM (e.g., trained on human preference pairs) might mitigate this.
 - **Training Duration**: The High KL experiment suggests that 500 steps is insufficient for convergence under strict constraints. Extending to 1000+ steps would be necessary to see the final policy performance.
