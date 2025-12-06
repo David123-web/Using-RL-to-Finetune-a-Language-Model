@@ -1,6 +1,6 @@
 # RL-based Language Model Finetuning with PPO
 
-This project implements a complete pipeline for finetuning language models using Reinforcement Learning with Human Feedback (RLHF), specifically using Proximal Policy Optimization (PPO). This is a course project for ECE1508: Reinforcement Learning at the University of Toronto.
+This project implements a complete pipeline for finetuning language models using Reinforcement Learning with Human Feedback (RLHF), specifically using Proximal Policy Optimization (PPO). 
 
 ## Overview
 
@@ -324,5 +324,6 @@ This project is for academic purposes as part of ECE1508 course at University of
 ## Contributors
 
 Zuhao（David）Zhang 1005828080
+Yiwei (George) Cao 1005556426
 
 
