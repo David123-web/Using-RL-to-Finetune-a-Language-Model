@@ -29,7 +29,15 @@ class PolicyLM(nn.Module):
         # Set padding side to left for decoder-only models (for generation)
         self.tokenizer.padding_side = 'left'
 
-        self.model = AutoModelForCausalLM.from_pretrained(config.model_name)
+        try:
+            self.model = AutoModelForCausalLM.from_pretrained(config.model_name)
+        except ValueError:
+            # Fallback for local checkpoints without config.json: assume distilgpt2
+            print(f"Warning: Could not load config from {config.model_name}, assuming distilgpt2 architecture.")
+            from transformers import AutoConfig
+            model_config = AutoConfig.from_pretrained("distilgpt2")
+            self.model = AutoModelForCausalLM.from_pretrained(config.model_name, config=model_config)
+            
         self.model.to(self.device)
         self.max_length = config.max_length
 

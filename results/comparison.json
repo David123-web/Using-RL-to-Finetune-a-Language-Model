@@ -1,0 +1,300 @@
+{
+  "summary": {
+    "base": {
+      "mean_reward": 0.2175928326905705,
+      "mean_sentiment": 0.42529204644504354,
+      "diversity_ratio": 0.21841235824627198,
+      "mean_repetition": 0.1624960775947347,
+      "mean_length": 44.796
+    },
+    "sft": {
+      "mean_reward": 0.05099033174215583,
+      "mean_sentiment": 0.27717368974589046,
+      "diversity_ratio": 0.1992978550327525,
+      "mean_repetition": 0.16691679084395633,
+      "mean_length": 46.714
+    },
+    "ppo": {
+      "mean_reward": 0.31228736141871194,
+      "mean_sentiment": 0.3250273597673804,
+      "diversity_ratio": 0.3088,
+      "mean_repetition": 0.06170000000000002,
+      "mean_length": 20.0
+    }
+  },
+  "detailed": {
+    "base": {
+      "reward": {
+        "mean": 0.2175928326905705,
+        "std": 0.47873368179742354,
+        "min": -0.31943216919898987,
+        "max": 0.9894493222236633
+      },
+      "sentiment": {
+        "mean": 0.42529204644504354,
+        "std": 0.47044724455959286,
+        "min": 0.00017992331413552165,
+        "max": 0.9998683929443359
+      },
+      "diversity": {
+        "unique_tokens": 4892,
+        "total_tokens": 22398,
+        "diversity_ratio": 0.21841235824627198
+      },
+      "repetition": {
+        "mean_repetition": 0.1624960775947347,
+        "std_repetition": 0.07312275649417795
+      },
+      "length": {
+        "mean_length": 44.796,
+        "std_length": 5.553231851813861,
+        "min_length": 20,
+        "max_length": 52
+      },
+      "examples": [
+        {
+          "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+          "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. But when it comes to entertainment, sci-fi comes with a real appeal. The internet is the place where the internet turns out to be the place for art",
+          "reward": 0.7511969208717346,
+          "sentiment": 0.9970302581787109
+        },
+        {
+          "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+          "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, with a new car on the driveway (a new car is also available!) and a wide-open exterior door. The roof is actually a white metal grill,",
+          "reward": 0.7600347399711609,
+          "sentiment": 0.9991651773452759
+        },
+        {
+          "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+          "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and less predictable.",
+          "reward": 0.7098926901817322,
+          "sentiment": 0.7280744910240173
+        },
+        {
+          "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+          "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former Alabama coach Dave Gundy and then-Alabama coach David Beatty took their final shots at the head coach.\n\n\n\n\n\n@DaveGund",
+          "reward": 0.9629306197166443,
+          "sentiment": 0.9892464280128479
+        },
+        {
+          "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+          "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like the new \"What is Voodoo\" set in the early 1970s.\n\nIt's very much like The Lost Boys. I get so good at the",
+          "reward": 0.7807008624076843,
+          "sentiment": 0.9993054866790771
+        },
+        {
+          "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+          "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest of the people', in 2009, after being charged with a murder charge and one of 16 convictions for killing a police officer.\n\n\n\n\n\n\n",
+          "reward": -0.22534826397895813,
+          "sentiment": 0.0032231707591563463
+        },
+        {
+          "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+          "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, I\u203ad like to watch as much of that movie as I can.\n\nThe movie features Frank (Rachael Hargreaves) and",
+          "reward": 0.9844642281532288,
+          "sentiment": 0.9998488426208496
+        },
+        {
+          "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+          "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie with the film, but it's clear that the only reason why I did was a very poor one. Instead of playing the movie \"Hollywood made me want",
+          "reward": -0.22507105767726898,
+          "sentiment": 0.00046085866051726043
+        },
+        {
+          "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+          "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting time on any other reason I could.\nI'm sorry, though. I didn't think it would be entertaining to watch a non-stop horror movie (",
+          "reward": -0.22252170741558075,
+          "sentiment": 0.00020556415256578475
+        },
+        {
+          "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+          "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's even the most serious problem</br />The main reason I like your movie is that it has so much light in between it's frame-rate and it's",
+          "reward": -0.23087292909622192,
+          "sentiment": 0.00023818921181373298
+        }
+      ]
+    },
+    "sft": {
+      "reward": {
+        "mean": 0.05099033174215583,
+        "std": 0.4212308607354671,
+        "min": -0.28158801794052124,
+        "max": 0.979503870010376
+      },
+      "sentiment": {
+        "mean": 0.27717368974589046,
+        "std": 0.41836167821596815,
+        "min": 0.00017405672406312078,
+        "max": 0.9998668432235718
+      },
+      "diversity": {
+        "unique_tokens": 4655,
+        "total_tokens": 23357,
+        "diversity_ratio": 0.1992978550327525
+      },
+      "repetition": {
+        "mean_repetition": 0.16691679084395633,
+        "std_repetition": 0.06313184052661418
+      },
+      "length": {
+        "mean_length": 46.714,
+        "std_length": 2.787867285220012,
+        "min_length": 32,
+        "max_length": 52
+      },
+      "examples": [
+        {
+          "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+          "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. So the lack of a \"movie,\" though I am very much interested in it anyway. I have enjoyed a lot of Sci-fi movies, for example,",
+          "reward": 0.7583714127540588,
+          "sentiment": 0.9939269423484802
+        },
+        {
+          "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+          "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, while the car is generally pleasant from the beginning as a child. A lot of car chases. It does a good job of portraying a young person as a",
+          "reward": 0.7508206963539124,
+          "sentiment": 0.9998002648353577
+        },
+        {
+          "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+          "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and they're so much better with their better acting and the story. I felt like I was able to see in the movie that the dialogue was quite a bit better",
+          "reward": 0.5632895231246948,
+          "sentiment": 0.81928950548172
+        },
+        {
+          "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+          "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former Navy SEAL Jimmie Young joined the ranks of today's high school students as a part company to see how much the Navy has spent on \"A Prairie Home Companion",
+          "reward": 0.7702176570892334,
+          "sentiment": 0.994707465171814
+        },
+        {
+          "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+          "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like it.<br /><br />It's a dark and wacky story of a woman and a father - the same family as a teenager. Unfortunately, it",
+          "reward": 0.658250629901886,
+          "sentiment": 0.8861575722694397
+        },
+        {
+          "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+          "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest part. I actually tried to watch this movie last decade, but I really couldn't quite get through the process.<br /><br />One of the reasons",
+          "reward": -0.2280902862548828,
+          "sentiment": 0.003727892879396677
+        },
+        {
+          "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+          "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, there were some films I like better. Here the main plot line of the movie is about a young Chinese woman who (he) is interested in a martial arts",
+          "reward": 0.7747097611427307,
+          "sentiment": 0.9991995692253113
+        },
+        {
+          "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+          "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie with the director. It all comes down to his performance as Captain Kirk. I think most people expected their Captain Kirk to do a lot better on a more serious",
+          "reward": -0.20718242228031158,
+          "sentiment": 0.01681758090853691
+        },
+        {
+          "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+          "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting half my life trying to make a movie of this kind of thing. The acting is so poor it makes me cry, but the acting really was awful, and",
+          "reward": -0.2324570268392563,
+          "sentiment": 0.00019603269174695015
+        },
+        {
+          "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+          "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's no reason why the main characters, the heroine, would have the same dialogue...it's just stupid. <br /><br />The movie is the first",
+          "reward": -0.2378976047039032,
+          "sentiment": 0.0001976322673726827
+        }
+      ]
+    },
+    "ppo": {
+      "reward": {
+        "mean": 0.31228736141871194,
+        "std": 0.4434350176729206,
+        "min": -0.19790944457054138,
+        "max": 0.9998725652694702
+      },
+      "sentiment": {
+        "mean": 0.3250273597673804,
+        "std": 0.4434473512731966,
+        "min": 0.00017389679851476103,
+        "max": 0.9998725652694702
+      },
+      "diversity": {
+        "unique_tokens": 3088,
+        "total_tokens": 10000,
+        "diversity_ratio": 0.3088
+      },
+      "repetition": {
+        "mean_repetition": 0.06170000000000002,
+        "std_repetition": 0.05411536576418368
+      },
+      "length": {
+        "mean_length": 20.0,
+        "std_length": 0.5585696017507576,
+        "min_length": 8,
+        "max_length": 21
+      },
+      "examples": [
+        {
+          "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+          "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.9428147077560425,
+          "sentiment": 0.9528146982192993
+        },
+        {
+          "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+          "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.9897847771644592,
+          "sentiment": 0.9997847676277161
+        },
+        {
+          "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+          "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.35904738306999207,
+          "sentiment": 0.3790473937988281
+        },
+        {
+          "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+          "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.9430997967720032,
+          "sentiment": 0.9830998182296753
+        },
+        {
+          "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+          "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.010938937775790691,
+          "sentiment": 0.020938938483595848
+        },
+        {
+          "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+          "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": -0.008382379077374935,
+          "sentiment": 0.0016176215140148997
+        },
+        {
+          "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+          "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.9998290538787842,
+          "sentiment": 0.9998290538787842
+        },
+        {
+          "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+          "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": 0.028820466250181198,
+          "sentiment": 0.028820466250181198
+        },
+        {
+          "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+          "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": -0.009808136150240898,
+          "sentiment": 0.0001918649359140545
+        },
+        {
+          "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+          "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+          "reward": -0.019815515726804733,
+          "sentiment": 0.00018448599439579993
+        }
+      ]
+    }
+  }
+}

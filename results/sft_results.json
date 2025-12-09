@@ -1,0 +1,91 @@
+{
+  "reward": {
+    "mean": 0.05099033174215583,
+    "std": 0.4212308607354671,
+    "min": -0.28158801794052124,
+    "max": 0.979503870010376
+  },
+  "sentiment": {
+    "mean": 0.27717368974589046,
+    "std": 0.41836167821596815,
+    "min": 0.00017405672406312078,
+    "max": 0.9998668432235718
+  },
+  "diversity": {
+    "unique_tokens": 4655,
+    "total_tokens": 23357,
+    "diversity_ratio": 0.1992978550327525
+  },
+  "repetition": {
+    "mean_repetition": 0.16691679084395633,
+    "std_repetition": 0.06313184052661418
+  },
+  "length": {
+    "mean_length": 46.714,
+    "std_length": 2.787867285220012,
+    "min_length": 32,
+    "max_length": 52
+  },
+  "examples": [
+    {
+      "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+      "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood. So the lack of a \"movie,\" though I am very much interested in it anyway. I have enjoyed a lot of Sci-fi movies, for example,",
+      "reward": 0.7583714127540588,
+      "sentiment": 0.9939269423484802
+    },
+    {
+      "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+      "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases, while the car is generally pleasant from the beginning as a child. A lot of car chases. It does a good job of portraying a young person as a",
+      "reward": 0.7508206963539124,
+      "sentiment": 0.9998002648353577
+    },
+    {
+      "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+      "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and they're so much better with their better acting and the story. I felt like I was able to see in the movie that the dialogue was quite a bit better",
+      "reward": 0.5632895231246948,
+      "sentiment": 0.81928950548172
+    },
+    {
+      "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+      "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former Navy SEAL Jimmie Young joined the ranks of today's high school students as a part company to see how much the Navy has spent on \"A Prairie Home Companion",
+      "reward": 0.7702176570892334,
+      "sentiment": 0.994707465171814
+    },
+    {
+      "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+      "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like it.<br /><br />It's a dark and wacky story of a woman and a father - the same family as a teenager. Unfortunately, it",
+      "reward": 0.658250629901886,
+      "sentiment": 0.8861575722694397
+    },
+    {
+      "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+      "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest part. I actually tried to watch this movie last decade, but I really couldn't quite get through the process.<br /><br />One of the reasons",
+      "reward": -0.2280902862548828,
+      "sentiment": 0.003727892879396677
+    },
+    {
+      "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+      "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2, there were some films I like better. Here the main plot line of the movie is about a young Chinese woman who (he) is interested in a martial arts",
+      "reward": 0.7747097611427307,
+      "sentiment": 0.9991995692253113
+    },
+    {
+      "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+      "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie with the director. It all comes down to his performance as Captain Kirk. I think most people expected their Captain Kirk to do a lot better on a more serious",
+      "reward": -0.20718242228031158,
+      "sentiment": 0.01681758090853691
+    },
+    {
+      "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+      "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting half my life trying to make a movie of this kind of thing. The acting is so poor it makes me cry, but the acting really was awful, and",
+      "reward": -0.2324570268392563,
+      "sentiment": 0.00019603269174695015
+    },
+    {
+      "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+      "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's no reason why the main characters, the heroine, would have the same dialogue...it's just stupid. <br /><br />The movie is the first",
+      "reward": -0.2378976047039032,
+      "sentiment": 0.0001976322673726827
+    }
+  ]
+}

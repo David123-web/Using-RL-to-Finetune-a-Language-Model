@@ -1,0 +1,91 @@
+{
+  "reward": {
+    "mean": 0.31228736141871194,
+    "std": 0.4434350176729206,
+    "min": -0.19790944457054138,
+    "max": 0.9998725652694702
+  },
+  "sentiment": {
+    "mean": 0.3250273597673804,
+    "std": 0.4434473512731966,
+    "min": 0.00017389679851476103,
+    "max": 0.9998725652694702
+  },
+  "diversity": {
+    "unique_tokens": 3088,
+    "total_tokens": 10000,
+    "diversity_ratio": 0.3088
+  },
+  "repetition": {
+    "mean_repetition": 0.06170000000000002,
+    "std_repetition": 0.05411536576418368
+  },
+  "length": {
+    "mean_length": 20.0,
+    "std_length": 0.5585696017507576,
+    "min_length": 8,
+    "max_length": 21
+  },
+  "examples": [
+    {
+      "prompt": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.",
+      "response": "I love sci-fi and am willing to put up with a lot. Sci-fi movies/TV are usually underfunded, under-appreciated and misunderstood.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.9428147077560425,
+      "sentiment": 0.9528146982192993
+    },
+    {
+      "prompt": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,",
+      "response": "Worth the entertainment value of a rental, especially if you like action movies. This one features the usual car chases,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.9897847771644592,
+      "sentiment": 0.9997847676277161
+    },
+    {
+      "prompt": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and",
+      "response": "its a totally average film with a few semi-alright action sequences that make the plot seem a little better and\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.35904738306999207,
+      "sentiment": 0.3790473937988281
+    },
+    {
+      "prompt": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former",
+      "response": "STAR RATING: ***** Saturday Night **** Friday Night *** Friday Morning ** Sunday Night * Monday Morning <br /><br />Former\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.9430997967720032,
+      "sentiment": 0.9830998182296753
+    },
+    {
+      "prompt": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like",
+      "response": "First off let me say, If you haven't enjoyed a Van Damme movie since bloodsport, you probably will not like\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.010938937775790691,
+      "sentiment": 0.020938938483595848
+    },
+    {
+      "prompt": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest",
+      "response": "I had high hopes for this one until they changed the name to 'The Shepherd : Border Patrol, the lamest\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": -0.008382379077374935,
+      "sentiment": 0.0016176215140148997
+    },
+    {
+      "prompt": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,",
+      "response": "Isaac Florentine has made some of the best western Martial Arts action movies ever produced. In particular US Seals 2,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.9998290538787842,
+      "sentiment": 0.9998290538787842
+    },
+    {
+      "prompt": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie",
+      "response": "It actually pains me to say it, but this movie was horrible on every level. The blame does not lie\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": 0.028820466250181198,
+      "sentiment": 0.028820466250181198
+    },
+    {
+      "prompt": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting",
+      "response": "Technically I'am a Van Damme Fan, or I was. this movie is so bad that I hated myself for wasting\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": -0.009808136150240898,
+      "sentiment": 0.0001918649359140545
+    },
+    {
+      "prompt": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's",
+      "response": "Honestly awful film, bad editing, awful lighting, dire dialog and scrappy screenplay.<br /><br />The lighting at is so bad there's\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "reward": -0.019815515726804733,
+      "sentiment": 0.00018448599439579993
+    }
+  ]
+}
