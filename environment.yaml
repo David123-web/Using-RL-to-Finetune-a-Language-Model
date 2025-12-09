@@ -1,0 +1,107 @@
+# Conda environment specification for RL Language Model Fine-tuning
+name: rl-lm-finetune
+
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip>=23.0
+
+  # Install via pip
+  - pip:
+    # Core dependencies
+    - torch>=2.0.0
+    - transformers>=4.30.0
+    - datasets>=2.12.0
+    - pyyaml>=6.0
+    
+    # Training and optimization
+    - accelerate>=0.20.0
+    - tqdm>=4.65.0
+    
+    # Evaluation and visualization
+    - numpy>=1.24.0
+    - matplotlib>=3.7.0
+    - scikit-learn>=1.2.0
+    
+    # Utilities
+    - jupyter>=1.0.0
+    - ipywidgets>=8.0.0
+
+# ============================================================================
+# PROJECT CONFIGURATION
+# All configuration parameters for models, training, and evaluation
+# ============================================================================
+
+# MODEL CONFIGURATION
+model:
+  name: "distilgpt2"
+  tokenizer_name: "distilgpt2"
+  max_length: 64
+  pad_token: "<|pad|>"
+  eos_token: ""
+
+# SUPERVISED FINE-TUNING (SFT) CONFIGURATION
+sft:
+  training:
+    batch_size: 8
+    max_steps: 2000
+    lr: 5e-5
+    warmup_steps: 100
+    weight_decay: 0.01
+    gradient_accumulation_steps: 1
+    max_length: 64
+  
+  data:
+    dataset_name: "imdb"             # example; you can replace later
+    text_field: "text"
+    split: "train[:5000]"            # keep small for laptop
+    val_split: "test[:1000]"
+    prompt_template: "Review: {text}\nSentiment:"
+    target_style: "positive"         # depends on your task
+  
+  logging:
+    log_every: 50
+    save_dir: "models/policy_sft"
+    save_every: 500
+    use_wandb: false
+
+# PPO TRAINING CONFIGURATION
+ppo:
+  training:
+    batch_size: 16                   # per update
+    rollout_batch_size: 32           # number of prompts per rollout
+    n_updates: 500
+    epochs_per_update: 4
+    gamma: 0.99
+    lam: 0.95
+    clip_range: 0.2
+    value_coef: 0.5
+    entropy_coef: 0.01
+    kl_coef: 0.1                     # if you use KL vs ref model
+    max_length: 64
+  
+  data:
+    prompt_split: "test[:1024]"      # prompts to generate from
+  
+  logging:
+    log_every: 10
+    save_dir: "models/policy_ppo"
+    eval_every: 50
+
+# REWARD MODEL CONFIGURATION
+reward_model:
+  type: "sentiment"
+  name: "distilbert-base-uncased-finetuned-sst-2-english"
+  
+  weights:
+    sentiment: 1.0
+    repetition: -0.5
+    length: 0.1
+  
+  length_target:
+    min_tokens: 10
+    max_tokens: 40

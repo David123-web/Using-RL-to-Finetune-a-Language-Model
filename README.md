@@ -135,6 +135,8 @@ python -m src.utils.plotting \
   --output plots
 ```
 
+**Note**: Training visualizations and results are saved in the `plots/` folder. This includes experiments with `kl_coef` values of 0.1 and 0.3 for comparison.
+
 ## Configuration
 
 ### Model Configuration (`config/model_config.yaml`)
@@ -151,9 +153,11 @@ Key hyperparameters:
 - `clip_range`: 0.2 (PPO clipping parameter)
 - `value_coef`: 0.5 (value loss coefficient)
 - `entropy_coef`: 0.01 (entropy bonus coefficient)
-- `kl_coef`: 0.1 (KL divergence penalty)
+- `kl_coef`: 0.1 (KL divergence penalty) **[Tested: 0.1 and 0.3]**
 - `gamma`: 0.99 (discount factor)
 - `lam`: 0.95 (GAE lambda)
+
+**Note**: We have tested `kl_coef` values of 0.1 and 0.3 to explore the tradeoff between policy improvement and maintaining similarity to the reference model. Results and visualizations from these experiments are available in the `plots/` folder.
 
 ### Reward Configuration (`config/reward_config.yaml`)
 
@@ -214,7 +218,13 @@ Expected improvements from PPO training:
 - ✅ Better control over output characteristics
 - ✅ Maintained fluency and coherence
 
-See `results/comparison.json` for detailed metrics after training.
+### Viewing Results
+
+- **Training visualizations**: See the `plots/` folder for generated training statistics and comparison plots from experiments with `kl_coef` values of 0.1 and 0.3
+- **Quantitative metrics**: See `results/comparison.json` for detailed metrics after training
+- **Model checkpoints**: Located in `models/policy_ppo/` and `models/policy_sft/`
+
+The `plots/` folder contains visualizations comparing training results with different KL coefficient values, demonstrating the effect of this hyperparameter on training stability and model performance.
 
 ## Interactive Demo
 
@@ -325,5 +335,3 @@ This project is for academic purposes as part of ECE1508 course at University of
 
 Zuhao（David）Zhang 1005828080
 Yiwei (George) Cao 1005556426
-
-
