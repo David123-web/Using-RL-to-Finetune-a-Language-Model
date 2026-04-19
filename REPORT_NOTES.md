@@ -7,37 +7,36 @@
 
 ## 2. Key Findings & Analysis
 
-### A. The "Reward Hacking" Phenomenon (Low KL Constraint)
-- **Experiment**: `kl_coef = 0.1`, `entropy_coef = 0.05`.
+### A. "Strategic Minimalist": A Nuanced Form of Reward Hacking
 - **Observation**: 
-    - The model quickly converged (around 300 steps) to a stable reward of ~0.3.
-    - **Qualitative Analysis**: The model learned a "lazy" strategy: appending generic positive phrases like **"better and"** to the end of sentences.
-    - **Why**: This is a local optimum. It's a low-risk, high-stability way to gain positive sentiment scores without risking the linguistic structure of the sentence (which might incur KL penalties if changed too drastically).
-- **Conclusion**: Demonstrates the effectiveness of PPO in optimizing the reward metric, but highlights the danger of "Goodhart's Law" – when a measure becomes a target, it ceases to be a good measure.
+    - The PPO model converged to a distinct pattern: appending a short positive suffix like **"better and"** and then **immediately terminating generation (Early Stopping)**.
+    - **Specific Example**: 
+        - *Prompt*: "its a totally average film with a few semi-alright action sequences that make the plot seem a little.."
+        - *Response*: "...make the plot seem a little **better and**" (Stops immediately).
+        - *Reward*: ~0.35 (Mediocre but positive).
+- **Analysis**: 
+    - **The "Minimum Effective Dose" Strategy**: The model discovered a local optimum where adding specific positive tokens ("better") flips the sentiment classifier from neutral to slightly positive, while immediately stopping prevents incurring Length Penalties or KL Divergence penalties associated with generating longer, divergent text.
+    - **Risk Aversion**: The model learned that "speaking more" increases the risk of negative rewards or grammatical errors (high KL), so it chose the safest path to a positive score.
 
-### B. The Impact of KL Regularization (High KL Constraint)
-- **Experiment**: `kl_coef = 0.3` (Ablation Study).
-- **Observation**:
-    - **Training Dynamics**: Unlike the smooth curve of KL=0.1, the reward curve for KL=0.3 was much more volatile and slower to rise. It did not fully plateau even after 500 steps, indicating ongoing exploration.
-    - **Reward Distribution**: The PPO model showed a **polarized distribution** (bimodal at 0.0 and ~1.0).
-        - *Interpretation*: The model engaged in "Selective Optimization". 
-        - For "easy" prompts, it successfully optimized to high sentiment (1.0).
-        - For "hard" prompts (where changing sentiment would require drastic rewriting), it chose to "play it safe" (stay close to base model) to avoid heavy KL penalties, resulting in neutral rewards (0.0) rather than risking negative rewards.
-    - **Negative Reward Elimination**: Unlike Base/SFT models which had a peak at -0.2, PPO successfully eliminated negative rewards, showing it learned to avoid penalties.
+### B. Selective Optimization & Batch Dynamics
+- **Phenomenon**: 
+    - While the global **Mean Reward** across the evaluation batch remained high (~0.7), specific "hard" prompts (like Example 3 above) stagnated at lower rewards (~0.35).
+- **Why it happens**:
+    - **Gradient Domination**: The PPO algorithm optimizes the average expected return. If fully rewriting a "hard" prompt to achieve a 0.9 score requires high KL divergence (risky exploration), the optimizer "sacrifices" this individual prompt.
+    - It is mathematically more efficient for the model to secure easy wins (1.0 rewards) on malleable prompts and perform "damage control" (0.35 reward) on rigid prompts, rather than risking stability to improve the outlier.
+    - This confirms that PPO can exhibit **Selective Optimization**, focusing heavily on prompts where the reward signal is easiest to exploit.
 
-### C. Convergence Speed vs. Constraint Strength
-- **Low KL (0.1)**: Fast convergence (~300 steps). The model quickly found a loophole.
-- **High KL (0.3)**: Slow convergence (>500 steps). The model struggled to find a policy that satisfies both the Reward Model (be positive) and the KL Constraint (be natural/close to original).
-- **Implication**: Stricter constraints require longer training times as the solution space becomes more complex to navigate.
-
-### D. Discrepancy between Evaluation and Training Dynamics
+### C. Evaluation vs. Exploration Discrepancy
 - **Observation**: 
-    - In the High KL experiment, the **Training Reward** (green curve) continued to trend upwards (with variance) until the end.
-    - However, the **Evaluation Reward** (on fixed 5 prompts) plateaued early at ~0.6491 and consistently produced the "better and" suffix.
-- **Analysis**:
-    - **Sampling Difference**: Training uses stochastic sampling on diverse batches (exploration), while evaluation often uses greedy/low-temp decoding on fixed prompts (exploitation).
-    - **Persistent Local Optimum**: Even though the model was improving globally (on the training set), for those specific evaluation prompts, the "better and" strategy remained the most confident (highest probability) output, showing how stubborn reward hacking behaviors can be.
-- **Takeaway**: Evaluation on a small, fixed set of prompts can mask the true learning progress and dynamics of the model.
+    - During training steps, the model briefly explored higher-reward (0.9) but riskier completions for the "hard" prompt.
+    - However, in the periodic evaluations (every 50 steps), the output collapsed deterministically to the "better and" strategy.
+- **Interpretation**:
+    - **Mode Collapse in Inference**: Even if the policy distribution retains some probability for complex answers, the "safe" answer (better and + EOS) became the highest probability path (Argmax).
+    - Since evaluation typically uses lower temperature or greedy decoding, it masks the underlying exploration and shows the model appearing "stuck" on a mediocre answer, highlighting the difference between a model's *capability* (seen in training variance) and its *policy preference* (seen in eval).
+
+### D. The Impact of Constraints (Low vs. High KL)
+- **Low KL (0.1)**: The model converged faster (~300 steps) to this "safe hack." It realized quickly that it could game the reward model with minimal changes.
+- **High KL (0.3)**: The convergence was slower and more volatile. The strong constraint made it harder for the model to even append "better and" without penalty, leading to a polarized distribution where it either succeeded perfectly or stayed completely neutral to avoid the KL cost.
 
 ## 3. Future Work / Limitations
 - **Reward Model Robustness**: The "better and" hack suggests the Reward Model (DistilBERT) is susceptible to simple keyword spotting. A more robust RM (e.g., trained on human preference pairs) might mitigate this.
