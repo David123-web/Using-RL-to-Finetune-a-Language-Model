@@ -9,9 +9,9 @@ The project demonstrates how PPO can be used to steer a language model's output 
 ## Features
 
 - ✅ **Complete PPO Implementation**: Full PPO algorithm with value head, advantage estimation (GAE), and clipped objective
-- ✅ **Custom Reward Model**: Combines sentiment analysis, repetition penalty, and length constraints
+- ✅ **Shaped Composite Reward**: Completion-only reward decomposition (sentiment, repetition, length, quality anchor)
 - ✅ **Supervised Finetuning Baseline**: Standard SFT implementation for comparison
-- ✅ **Comprehensive Evaluation**: Metrics for reward, sentiment, diversity, and generation quality
+- ✅ **Comprehensive Evaluation**: Fixed-seed greedy/sampling evaluation with full-distribution exports
 - ✅ **Visualization Tools**: Plotting utilities for training progress and model comparison
 - ✅ **Demo Notebook**: Interactive Jupyter notebook for experimentation
 
@@ -116,7 +116,7 @@ This will:
 Compare all models:
 
 ```bash
-bash scripts/run_eval.sh --base --sft models/policy_sft --ppo models/policy_ppo/final
+bash scripts/run_eval.sh --base --sft models/policy_sft --ppo models/policy_ppo/final --seed 42 --modes greedy,sampling
 ```
 
 This generates:
@@ -132,6 +132,7 @@ Generate plots from results:
 python -m src.utils.plotting \
   --training_stats models/policy_ppo/training_stats.json \
   --comparison results/comparison.json \
+  --mode sampling \
   --output plots
 ```
 
@@ -150,34 +151,42 @@ max_length: 64
 Key hyperparameters:
 - `clip_range`: 0.2 (PPO clipping parameter)
 - `value_coef`: 0.5 (value loss coefficient)
-- `entropy_coef`: 0.01 (entropy bonus coefficient)
-- `kl_coef`: 0.1 (KL divergence penalty)
+- `entropy_coef`: 0.05 (entropy bonus coefficient)
+- `kl_coef`: 0.3 (initial KL divergence penalty)
 - `gamma`: 0.99 (discount factor)
 - `lam`: 0.95 (GAE lambda)
+- `kl_control`: adaptive target-KL controller
+- `collapse_guard`: early-stop conditions based on EOS/length/reward-quality gap
 
 ### Reward Configuration (`config/reward_config.yaml`)
 
 The reward model combines multiple signals:
 - **Sentiment**: Uses DistilBERT sentiment classifier (weight: 1.0)
-- **Repetition Penalty**: Discourages repetitive text (weight: -0.5)
-- **Length Bonus**: Encourages appropriate length (weight: 0.1)
+- **Token Repetition Penalty**: Discourages repeated tokens
+- **Phrase Repetition Penalty**: Discourages repeated n-grams
+- **Length Score**: Rewards outputs in a target range and penalizes too short/too long outputs
+- **Quality Anchor**: Prompt-completion token overlap term to reduce empty positive replies
 
 ## Methodology
 
 ### Reward Model
 
-The reward function combines three components:
+The reward function uses completion-only scoring and combines multiple bounded components:
 
 ```
-R(text) = w_sentiment * sentiment_score(text) 
-          + w_repetition * repetition_penalty(text)
-          + w_length * length_bonus(text)
+R = w_sentiment * sentiment
+  + w_rep_token * repetition_token
+  + w_rep_phrase * repetition_phrase
+  + w_length * length_score
+  + w_quality * quality_anchor
 ```
 
 Where:
 - `sentiment_score`: Probability of positive sentiment from DistilBERT
-- `repetition_penalty`: 1 - (unique_tokens / total_tokens)
-- `length_bonus`: 0 if within target range, -1 otherwise
+- `repetition_token`: 1 - (unique_tokens / total_tokens)
+- `repetition_phrase`: 1 - (unique_ngrams / total_ngrams)
+- `length_score`: piecewise score centered on target interval
+- `quality_anchor`: prompt-response overlap score
 
 ### PPO Algorithm
 
@@ -199,20 +208,20 @@ Where r(θ) is the probability ratio between new and old policies.
 
 The evaluation pipeline computes:
 
-1. **Reward Metrics**: Mean, std, min, max rewards
-2. **Sentiment Scores**: Positive sentiment probability
-3. **Diversity Metrics**: Unique token ratio, vocabulary diversity
-4. **Repetition Metrics**: Token repetition statistics
-5. **Length Statistics**: Mean, std, min, max generation lengths
-6. **Qualitative Examples**: Side-by-side comparisons
+1. **Reward Metrics**: Centered reward and raw reward statistics
+2. **Reward Decomposition**: Sentiment, repetition-token, repetition-phrase, length, quality-anchor
+3. **Decoding Split**: Greedy vs sampling metrics under fixed seed
+4. **Collapse Metrics**: EOS trigger rate, completion length, reward-quality gap
+5. **Diversity Metrics**: Unique token ratio, unique n-gram ratios
+6. **Qualitative Examples**: Prompt/response/completion side-by-side samples
 
 ## Results
 
 Expected improvements from PPO training:
-- ✅ Higher average reward (sentiment + diversity + length)
-- ✅ More positive sentiment in generations
-- ✅ Better control over output characteristics
-- ✅ Maintained fluency and coherence
+- ✅ Higher raw reward with interpretable component trends
+- ✅ Better reward-quality trade-off under KL control
+- ✅ Explicit monitoring of collapse risks (length/EOS)
+- ✅ More reliable comparisons across decode modes
 
 See `results/comparison.json` for detailed metrics after training.
 
@@ -296,7 +305,8 @@ model_name: "gpt2"  # or "gpt2-medium", "distilgpt2", etc.
 ### Poor Reward Improvements
 - Check reward model is working: test on sample texts
 - Adjust reward weights in `reward_config.yaml`
-- Increase `kl_coef` if diverging too much from reference
+- Tune `target_kl` / adaptive KL bounds if policy drifts too far
+- Check collapse guard metrics (`eos_rate`, `avg_completion_length_words`, `reward_quality_gap`)
 - Try different learning rates
 
 ## Academic Integrity

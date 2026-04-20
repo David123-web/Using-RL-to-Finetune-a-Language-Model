@@ -7,15 +7,27 @@ echo "Running PPO Training"
 echo "================================"
 
 # Default config paths
-PPO_CONFIG="${1:-config/ppo_config.yaml}"
-REWARD_CONFIG="${2:-config/reward_config.yaml}"
+PPO_CONFIG="config/ppo_config.yaml"
+REWARD_CONFIG="config/reward_config.yaml"
+
+if [ $# -ge 1 ]; then
+	PPO_CONFIG="$1"
+	shift
+fi
+
+if [ $# -ge 1 ]; then
+	REWARD_CONFIG="$1"
+	shift
+fi
+
+EXTRA_ARGS=("$@")
 
 echo "Using PPO config: $PPO_CONFIG"
 echo "Using reward config: $REWARD_CONFIG"
 echo ""
 
 # Run training
-python -m src.training.train_ppo --config "$PPO_CONFIG" --reward_config "$REWARD_CONFIG"
+python -m src.training.train_ppo --config "$PPO_CONFIG" --reward_config "$REWARD_CONFIG" "${EXTRA_ARGS[@]}"
 
 echo ""
 echo "================================"

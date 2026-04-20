@@ -1,12 +1,40 @@
 reward_model:
   type: "sentiment"
   name: "distilbert-base-uncased-finetuned-sst-2-english"
+  completion_only: true
+  normalize_text: true
 
 weights:
   sentiment: 1.0
-  repetition: -0.2           # Reduced penalty from -0.5
-  length: 0.2                # Increased bonus from 0.1
+  repetition_token: -0.3
+  repetition_phrase: -0.25
+  length: 0.3
+  quality_anchor: 0.35
 
 length_target:
-  min_tokens: 10
+  min_tokens: 12
   max_tokens: 40
+
+quality_anchor:
+  type: "token_overlap"
+  min_token_chars: 3
+
+alignment_gate:
+  enabled: true
+  quality_floor: 0.15
+  strength: 0.85
+
+repetition:
+  phrase_ngram: 3
+
+clipping:
+  sentiment: [0.0, 1.0]
+  repetition_token: [0.0, 1.0]
+  repetition_phrase: [0.0, 1.0]
+  length: [-1.0, 1.0]
+  quality_anchor: [0.0, 1.0]
+  total: [-2.0, 2.0]
+
+aggregation:
+  center_total_reward: true
+  normalize_total_reward: false

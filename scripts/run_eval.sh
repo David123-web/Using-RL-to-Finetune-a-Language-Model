@@ -11,6 +11,8 @@ BASE=false
 SFT_PATH=""
 PPO_PATH=""
 OUTPUT_DIR="results"
+SEED=""
+MODES=""
 
 while [[ $# -gt 0 ]]; do
   case $1 in
@@ -30,34 +32,50 @@ while [[ $# -gt 0 ]]; do
       OUTPUT_DIR="$2"
       shift 2
       ;;
+    --seed)
+      SEED="$2"
+      shift 2
+      ;;
+    --modes)
+      MODES="$2"
+      shift 2
+      ;;
     *)
       echo "Unknown option: $1"
-      echo "Usage: $0 [--base] [--sft PATH] [--ppo PATH] [--output DIR]"
+      echo "Usage: $0 [--base] [--sft PATH] [--ppo PATH] [--output DIR] [--seed N] [--modes greedy,sampling]"
       exit 1
       ;;
   esac
 done
 
 # Build command
-CMD="python -m src.evaluation.evaluate --output $OUTPUT_DIR"
+CMD=(python -m src.evaluation.evaluate --output "$OUTPUT_DIR")
 
 if [ "$BASE" = true ]; then
-  CMD="$CMD --base"
+  CMD+=(--base)
 fi
 
 if [ -n "$SFT_PATH" ]; then
-  CMD="$CMD --sft $SFT_PATH"
+  CMD+=(--sft "$SFT_PATH")
 fi
 
 if [ -n "$PPO_PATH" ]; then
-  CMD="$CMD --ppo $PPO_PATH"
+  CMD+=(--ppo "$PPO_PATH")
 fi
 
-echo "Running: $CMD"
+if [ -n "$SEED" ]; then
+  CMD+=(--seed "$SEED")
+fi
+
+if [ -n "$MODES" ]; then
+  CMD+=(--modes "$MODES")
+fi
+
+echo "Running: ${CMD[*]}"
 echo ""
 
 # Run evaluation
-eval $CMD
+"${CMD[@]}"
 
 echo ""
 echo "================================"

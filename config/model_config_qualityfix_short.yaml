@@ -1,0 +1,30 @@
+model_name: "distilgpt2"
+tokenizer_name: "distilgpt2"
+
+max_length: 64
+pad_token: "<|pad|>"
+eos_token: ""
+
+evaluation:
+  seed: 44
+  n_samples: 300
+  sample_print_count: 5
+  dataset_name: "imdb"
+  prompt_split: "test[:300]"
+  max_new_tokens: 32
+  use_centered_reward: false
+  modes:
+    greedy:
+      do_sample: false
+      temperature: 1.0
+      top_k: 0
+      top_p: 1.0
+      repetition_penalty: 1.2
+      no_repeat_ngram_size: 3
+    sampling:
+      do_sample: true
+      temperature: 1.0
+      top_k: 50
+      top_p: 1.0
+      repetition_penalty: 1.2
+      no_repeat_ngram_size: 3

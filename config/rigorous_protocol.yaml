@@ -1,0 +1,16 @@
+# Recommended rigorous protocol for report-grade experiments.
+
+protocol:
+  training_seeds: [11, 22, 33]
+  evaluation_seeds: [42, 43, 44]
+  eval_modes: ["greedy", "sampling"]
+
+paths:
+  train_save_root: "models/policy_ppo_multiseed"
+  eval_output_root: "results/multiseed_eval"
+  aggregate_output: "results/multiseed_eval/aggregate.json"
+
+notes:
+  - "Use >= 3 training seeds for final claims."
+  - "Run both greedy and sampling evaluations for each seed."
+  - "Report mean/std/95% CI over seeds."

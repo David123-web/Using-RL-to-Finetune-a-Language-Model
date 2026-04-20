@@ -1,0 +1,182 @@
+﻿{
+    "run_log_root":  "results\\run_logs\\v1_vs_f1_multiseed_20260419_205909",
+    "output_root":  "results/eval_fair_v3metric_v1_vs_f1",
+    "eval_seed":  44,
+    "train_seeds":  [
+                        11,
+                        22,
+                        33
+                    ],
+    "rows":  [
+                 {
+                     "variant":  "v1",
+                     "train_seed":  11,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.44,
+                     "greedy_q_nonzero":  0.7433,
+                     "sampling_raw":  0.4011,
+                     "sampling_q_nonzero":  0.61,
+                     "greedy_eos":  0.01,
+                     "sampling_eos":  0.04,
+                     "avg_fbeta_13":  0.5155,
+                     "constrained_score":  0.2565
+                 },
+                 {
+                     "variant":  "v1",
+                     "train_seed":  22,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.4656,
+                     "greedy_q_nonzero":  0.9133,
+                     "sampling_raw":  0.4111,
+                     "sampling_q_nonzero":  0.7933,
+                     "greedy_eos":  0.05,
+                     "sampling_eos":  0.05,
+                     "avg_fbeta_13":  0.5978,
+                     "constrained_score":  0.3478
+                 },
+                 {
+                     "variant":  "v1",
+                     "train_seed":  33,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.4568,
+                     "greedy_q_nonzero":  0.84,
+                     "sampling_raw":  0.4116,
+                     "sampling_q_nonzero":  0.7633,
+                     "greedy_eos":  0.0233,
+                     "sampling_eos":  0.0433,
+                     "avg_fbeta_13":  0.5757,
+                     "constrained_score":  0.3314
+                 },
+                 {
+                     "variant":  "f1",
+                     "train_seed":  11,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.4472,
+                     "greedy_q_nonzero":  0.7367,
+                     "sampling_raw":  0.4026,
+                     "sampling_q_nonzero":  0.5967,
+                     "greedy_eos":  0.01,
+                     "sampling_eos":  0.04,
+                     "avg_fbeta_13":  0.517,
+                     "constrained_score":  0.2535
+                 },
+                 {
+                     "variant":  "f1",
+                     "train_seed":  22,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.4554,
+                     "greedy_q_nonzero":  0.9167,
+                     "sampling_raw":  0.4202,
+                     "sampling_q_nonzero":  0.8,
+                     "greedy_eos":  0.0633,
+                     "sampling_eos":  0.0433,
+                     "avg_fbeta_13":  0.5989,
+                     "constrained_score":  0.3503
+                 },
+                 {
+                     "variant":  "f1",
+                     "train_seed":  33,
+                     "eval_seed":  44,
+                     "greedy_raw":  0.4556,
+                     "greedy_q_nonzero":  0.8533,
+                     "sampling_raw":  0.4189,
+                     "sampling_q_nonzero":  0.8033,
+                     "greedy_eos":  0.0433,
+                     "sampling_eos":  0.0633,
+                     "avg_fbeta_13":  0.5884,
+                     "constrained_score":  0.3513
+                 }
+             ],
+    "summary_by_variant":  {
+                               "f1":  {
+                                          "n":  3,
+                                          "greedy_raw":  {
+                                                             "n":  3,
+                                                             "mean":  0.4527,
+                                                             "std":  0.0048,
+                                                             "min":  0.4472,
+                                                             "max":  0.4556
+                                                         },
+                                          "greedy_q_nonzero":  {
+                                                                   "n":  3,
+                                                                   "mean":  0.8356,
+                                                                   "std":  0.0913,
+                                                                   "min":  0.7367,
+                                                                   "max":  0.9167
+                                                               },
+                                          "sampling_raw":  {
+                                                               "n":  3,
+                                                               "mean":  0.4139,
+                                                               "std":  0.0098,
+                                                               "min":  0.4026,
+                                                               "max":  0.4202
+                                                           },
+                                          "sampling_q_nonzero":  {
+                                                                     "n":  3,
+                                                                     "mean":  0.7333,
+                                                                     "std":  0.1183,
+                                                                     "min":  0.5967,
+                                                                     "max":  0.8033
+                                                                 },
+                                          "avg_fbeta_13":  {
+                                                               "n":  3,
+                                                               "mean":  0.5681,
+                                                               "std":  0.0446,
+                                                               "min":  0.517,
+                                                               "max":  0.5989
+                                                           },
+                                          "constrained_score":  {
+                                                                    "n":  3,
+                                                                    "mean":  0.3184,
+                                                                    "std":  0.0562,
+                                                                    "min":  0.2535,
+                                                                    "max":  0.3513
+                                                                }
+                                      },
+                               "v1":  {
+                                          "n":  3,
+                                          "greedy_raw":  {
+                                                             "n":  3,
+                                                             "mean":  0.4541,
+                                                             "std":  0.013,
+                                                             "min":  0.44,
+                                                             "max":  0.4656
+                                                         },
+                                          "greedy_q_nonzero":  {
+                                                                   "n":  3,
+                                                                   "mean":  0.8322,
+                                                                   "std":  0.0853,
+                                                                   "min":  0.7433,
+                                                                   "max":  0.9133
+                                                               },
+                                          "sampling_raw":  {
+                                                               "n":  3,
+                                                               "mean":  0.4079,
+                                                               "std":  0.0059,
+                                                               "min":  0.4011,
+                                                               "max":  0.4116
+                                                           },
+                                          "sampling_q_nonzero":  {
+                                                                     "n":  3,
+                                                                     "mean":  0.7222,
+                                                                     "std":  0.0983,
+                                                                     "min":  0.61,
+                                                                     "max":  0.7933
+                                                                 },
+                                          "avg_fbeta_13":  {
+                                                               "n":  3,
+                                                               "mean":  0.563,
+                                                               "std":  0.0426,
+                                                               "min":  0.5155,
+                                                               "max":  0.5978
+                                                           },
+                                          "constrained_score":  {
+                                                                    "n":  3,
+                                                                    "mean":  0.3119,
+                                                                    "std":  0.0487,
+                                                                    "min":  0.2565,
+                                                                    "max":  0.3478
+                                                                }
+                                      }
+                           }
+}

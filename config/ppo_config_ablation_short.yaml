@@ -1,0 +1,54 @@
+model:
+  name: "distilgpt2"
+  tokenizer_name: "distilgpt2"
+
+ppo:
+  batch_size: 16
+  rollout_batch_size: 32
+  n_updates: 150
+  epochs_per_update: 4
+  gamma: 0.99
+  lam: 0.95
+  clip_range: 0.2
+  value_coef: 0.5
+  entropy_coef: 0.05
+  kl_coef: 0.3
+  max_length: 64
+  max_new_tokens: 32
+  rollout_temperature: 0.9
+  rollout_top_k: 50
+  rollout_top_p: 0.92
+  rollout_repetition_penalty: 1.2
+  rollout_no_repeat_ngram_size: 3
+
+kl_control:
+  adaptive: true
+  target_kl: 0.1
+  update_rate: 0.05
+  min_coef: 0.05
+  max_coef: 1.0
+
+collapse_guard:
+  min_avg_completion_len: 6
+  max_eos_rate: 0.98
+  max_reward_quality_gap: 1.2
+  patience: 20
+
+checkpoint_selection:
+  reward_weight: 0.4
+  quality_weight: 0.3
+  eos_weight: 0.15
+  length_weight: 0.15
+
+data:
+  prompt_dataset: "imdb"
+  prompt_split: "test[:1024]"
+
+logging:
+  log_every: 10
+  log_examples_every: 10
+  log_example_count: 3
+  log_examples_do_sample: false
+  save_dir: "models/policy_ppo"
+  eval_every: 50
+  save_every: 100
